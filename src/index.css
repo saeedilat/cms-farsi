@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+body {
+    background-color: aliceblue;
+}
+@theme {
+  --breakpoint-xs: 480px;}
