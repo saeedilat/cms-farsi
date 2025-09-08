@@ -1,11 +1,23 @@
 import React from "react";
-import { ClipboardType, FileType, WalletMinimal, Pencil } from "lucide-react";
+import {
+  ClipboardType,
+  FileType,
+  WalletMinimal,
+  Pencil,
+  LogOut,
+} from "lucide-react";
 
-export default function Sidebar() {
+export default function ResponseSidebar({ flag, SetFlag }) {
   return (
-    <>
-      <div className="flex-col hidden overflow-hidden bg-white rounded-sm shadow-2xl lg:flex w-96 ">
+    <div
+      className={`fixed lg:hidden transform transition-transform duration-700 ease-in-out bg-black/40  top-0 w-full right-0 z-50 ${flag ? "translate-x-0" : "translate-x-full"}`}
+    >
+      <div className="flex flex-col overflow-hidden bg-white rounded-sm shadow-2xl w-80 ">
         <div className="bg-[url(/download.jpg)] w-full bg-cover bg-center  h-44 relative ">
+          <LogOut
+            onClick={() => SetFlag(false)}
+            className="absolute w-5 h-5 text-white cursor-pointer top-1 right-1"
+          />
           <img
             src="\download (1).jpg"
             className="absolute z-20 -translate-x-1/2 w-28 h-28 left-1/2 -bottom-8 border-6 border-gray-800/50"
@@ -55,6 +67,6 @@ export default function Sidebar() {
           </button>
         </div>
       </div>
-    </>
+    </div>
   );
 }
