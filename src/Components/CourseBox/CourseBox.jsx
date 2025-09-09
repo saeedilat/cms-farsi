@@ -3,8 +3,8 @@ import { WalletCards, FolderClosed, Boxes } from "lucide-react";
 
 export default function CourseBox() {
   return (
-    <div className="relative flex mx-5 mt-10 mb-20 shadow-2xl shadow-black">
-      <div className="absolute flex items-center justify-center w-12 h-12 text-white -rotate-45 -left-2 -top-2 rounded-xl bg-amber-900">
+    <div className="relative flex mx-5 mt-10 mb-20 shadow-2xl shadow-black group">
+      <div className="absolute flex items-center justify-center w-12 h-12 text-white duration-300 -rotate-45 cursor-default group-hover:-rotate-12 -left-2 -top-2 rounded-xl bg-amber-900">
         30%
       </div>
       <div className="h-52 w-72">

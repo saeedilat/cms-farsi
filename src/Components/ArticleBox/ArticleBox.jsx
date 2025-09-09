@@ -10,7 +10,9 @@ export default function ArticleBox() {
 
       <div className="flex flex-col justify-between mr-3">
         <div className="flex flex-col gap-3 mt-5 ">
-          <h1 className="text-2xl font-extrabold text-amber-500">دوره تخصصی</h1>
+          <h1 className="text-2xl font-extrabold text-amber-500">
+            مقاله موردنظر
+          </h1>
           <p className="text-md font-extralight">
             لورم ایپسوم متن ساختگی با تولید سادگی نامفهوم از صنعت چاپ و با
             استفاده از طراحان گرافیک است

@@ -4,7 +4,7 @@ import { ClipboardType, FileType, WalletMinimal, Pencil } from "lucide-react";
 export default function Sidebar() {
   return (
     <>
-      <div className="flex-col hidden overflow-hidden bg-white rounded-sm shadow-2xl lg:flex w-96 ">
+      <div className="flex-col hidden overflow-hidden bg-white rounded-sm shadow-2xl lg:flex w-96 h-fit ">
         <div className="bg-[url(/download.jpg)] w-full bg-cover bg-center  h-44 relative ">
           <img
             src="\download (1).jpg"
