@@ -1,13 +1,25 @@
-import React from "react";
+import React, { useEffect } from "react";
 import MainHeader from "../../Components/MainHeader/MainHeader";
 import CourseBox from "../../Components/CourseBox/CourseBox";
+import { useDispatch, useSelector } from "react-redux";
+import { getCoursesFromServer } from "../../Redux/store/courses";
 
 export default function Courses() {
+  const dispatch = useDispatch();
+  const courses = useSelector((state) => state.courses);
+
+  useEffect(() => {
+    dispatch(getCoursesFromServer("courses"));
+  }, []);
+  console.log(courses);
+
   return (
     <div className="relative w-full pb-20 bg-white rounded-sm shadow-2xl h-fit">
       <MainHeader />
 
-      <CourseBox />
+      {courses.map((course) => (
+        <CourseBox key={course._id} {...course} />
+      ))}
 
       <div className="absolute bottom-0 flex items-center justify-between w-full h-16 px-3 bg-gray-400">
         <div className="flex gap-2">

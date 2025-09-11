@@ -1,14 +1,16 @@
 import React from "react";
 
-export default function UserItem() {
+export default function UserItem({ firstname, lastname, email }) {
   return (
     <div className="flex items-center justify-between mx-10 mt-10 border-2 rounded-sm border-gray-800/50">
       <div className="flex items-center gap-2 ">
         <img src="\download (1).jpg" className="w-20 h-20" />
         <div>
-          <p className="text-lg font-bold">سعید ایلات منش</p>
+          <p className="text-lg font-bold">
+            {firstname} {lastname}
+          </p>
           <span className="text-sm font-extralight xs:hidden sm:block md:hidden lg:block">
-            saeedilat@gmail.com
+            {email}
           </span>
         </div>
       </div>
