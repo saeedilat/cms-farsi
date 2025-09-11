@@ -29,7 +29,7 @@ export default function Sidebar() {
             <p className="text-blue-500">سعید</p>
           </div>
 
-          <div className="flex items-center justify-between w-64 pb-5 mt-5 border-b-2 ">
+          <div className="flex items-center justify-between w-64 pb-5 mt-5 border-b-2">
             <div className="flex items-center justify-center gap-2">
               <FileType className="w-5 h-5" />
 

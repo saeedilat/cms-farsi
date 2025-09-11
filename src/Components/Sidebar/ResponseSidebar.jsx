@@ -10,7 +10,7 @@ import {
 export default function ResponseSidebar({ flag, SetFlag }) {
   return (
     <div
-      className={`fixed lg:hidden transform transition-transform duration-700 ease-in-out bg-black/40  top-0 w-full right-0 z-50 ${flag ? "translate-x-0" : "translate-x-full"}`}
+      className={`fixed h-full lg:hidden transform transition-transform duration-700 ease-in-out bg-black/40  top-0 w-full right-0 z-50 ${flag ? "translate-x-0" : "translate-x-full"}`}
     >
       <div className="flex flex-col overflow-hidden bg-white rounded-sm shadow-2xl w-80 ">
         <div className="bg-[url(/download.jpg)] w-full bg-cover bg-center  h-44 relative ">

@@ -1,13 +1,20 @@
 import React from "react";
 import { WalletCards, FolderClosed, Boxes } from "lucide-react";
 
-export default function CourseBox({ title, desc }) {
+export default function CourseBox({
+  title,
+  desc,
+  price,
+  category,
+  registersCount,
+  discount,
+}) {
   return (
     <div className="relative flex mx-5 mt-10 mb-20 shadow-2xl shadow-black group">
       <div className="absolute flex items-center justify-center w-12 h-12 text-white duration-300 -rotate-45 cursor-default group-hover:-rotate-12 -left-2 -top-2 rounded-xl bg-amber-900">
-        30%
+        {discount}%
       </div>
-      <div className="h-52 w-72">
+      <div className="h-52">
         <img src="/images.jfif" className="w-full h-full" />
       </div>
 
@@ -20,15 +27,15 @@ export default function CourseBox({ title, desc }) {
           <div className="flex gap-3 text-sm text-blue-600">
             <p className="flex gap-1">
               <WalletCards className="w-5 h-5" />
-              قیمت:3500
+              قیمت:{price}
             </p>
             <p className="flex gap-1">
               <FolderClosed className="w-5 h-5" />
-              دسته بندی:فرانت اند
+              دسته بندی:{category}
             </p>
             <p className="flex gap-1">
               <Boxes className="w-5 h-5" />
-              تعداد فروش:15
+              تعداد فروش:{registersCount}
             </p>
           </div>
           <div className="flex gap-1 mb-1 ml-2">
