@@ -1,7 +1,11 @@
 import React from "react";
 import { WalletCards, FolderClosed, Boxes } from "lucide-react";
+import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
+import { removeCourseFromServer } from "../../Redux/store/courses";
 
 export default function CourseBox({
+  _id,
   title,
   desc,
   price,
@@ -9,6 +13,26 @@ export default function CourseBox({
   registersCount,
   discount,
 }) {
+  const dispatch = useDispatch();
+
+  const removeCourseHandller = () => {
+    Swal.fire({
+      text: "آیا از حذف دوره اطمینان دارید؟",
+      confirmButtonText: "بله",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonText: "خیر",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeCourseFromServer(`courses/${_id}`));
+        Swal.fire({
+          text: "دوره با موفقیت حذف شد!",
+          icon: "success",
+        });
+      }
+    });
+  };
+
   return (
     <div className="relative flex mx-5 mt-10 mb-20 shadow-2xl shadow-black group">
       <div className="absolute flex items-center justify-center w-12 h-12 text-white duration-300 -rotate-45 cursor-default group-hover:-rotate-12 -left-2 -top-2 rounded-xl bg-amber-900">
@@ -39,7 +63,10 @@ export default function CourseBox({
             </p>
           </div>
           <div className="flex gap-1 mb-1 ml-2">
-            <button className="p-2 text-sm text-white bg-red-600 rounded-sm">
+            <button
+              className="p-2 text-sm text-white bg-red-600 rounded-sm cursor-pointer"
+              onClick={removeCourseHandller}
+            >
               حذف
             </button>
             <button className="p-2 text-sm text-white bg-blue-600 rounded-sm">

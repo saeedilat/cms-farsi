@@ -1,7 +1,29 @@
 import React from "react";
-import { WalletCards, FolderClosed, Boxes } from "lucide-react";
+import { WalletCards, FolderClosed, Boxes, icons } from "lucide-react";
+import { useDispatch } from "react-redux";
+import Swal from "sweetalert2";
+import { removeArticleFromServer } from "../../Redux/store/articles";
 
-export default function ArticleBox({ title, desc, category, views }) {
+export default function ArticleBox({ title, desc, category, views, _id }) {
+  const dispatch = useDispatch();
+
+  const removeArticleHandller = () => {
+    Swal.fire({
+      text: "آیااز حذف اطمینان دارید؟",
+      icon: "warning",
+      showCancelButton: true,
+      cancelButtonText: "خیر",
+      confirmButtonText: "بله",
+    }).then((result) => {
+      if (result.isConfirmed) {
+        dispatch(removeArticleFromServer(`articles/${_id}`));
+        Swal.fire({
+          text: "مقاله با موفقیت حذف شد!",
+          icon: "success",
+        });
+      }
+    });
+  };
   return (
     <div className="relative flex mx-5 mt-10 mb-20 shadow-2xl shadow-black">
       <div className="h-52 w-72">
@@ -25,7 +47,10 @@ export default function ArticleBox({ title, desc, category, views }) {
             </p>
           </div>
           <div className="flex gap-1 mb-1 ml-2">
-            <button className="p-2 text-sm text-white bg-red-600 rounded-sm">
+            <button
+              className="p-2 text-sm text-white bg-red-600 rounded-sm cursor-pointer"
+              onClick={removeArticleHandller}
+            >
               حذف
             </button>
             <button className="p-2 text-sm text-white bg-blue-600 rounded-sm">

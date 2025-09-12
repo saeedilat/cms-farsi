@@ -13,7 +13,7 @@ export default function Articles() {
   }, []);
 
   const reverseArticles = [...articles].reverse();
-  console.log(reverseArticles);
+
   return (
     <>
       <div className="relative w-full pb-20 bg-white rounded-sm shadow-2xl h-fit">

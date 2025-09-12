@@ -1,6 +1,6 @@
 import axios from "axios";
 
-export const getData = axios.create({
+export const removeData = axios.create({
   baseURL: "https://redux-cms.iran.liara.run/api/",
-  method: "GET",
+  method: "DELETE",
 });
