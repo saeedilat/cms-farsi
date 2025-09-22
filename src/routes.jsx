@@ -1,8 +1,7 @@
-import Courses from "./Pages/Courses/Courses.jsx";
-import Articles from "./Pages/Articles/Articles.jsx";
-import Infos from "./Pages/Infos/Infos.jsx";
-import Users from "./Pages/Users/USers.jsx";
-
+import Users from "./Pages/Users/Users"
+import Courses from "./Pages/Courses/Courses"
+import Articles from "./Pages/Articles/Articles"
+import Infos from "./Pages/Infos/Infos"
 const routes = [
   { path: "/", element: <Users /> },
   { path: "/users", element: <Users /> },

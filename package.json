@@ -1,8 +1,20 @@
 {
   "name": "cms-farsi",
-  "private": true,
   "version": "0.0.0",
+  "private": true,
+  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
+  "homepage": "https://github.com/saeedilat/cms-farsi#readme",
+  "bugs": {
+    "url": "https://github.com/saeedilat/cms-farsi/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/saeedilat/cms-farsi.git"
+  },
+  "license": "ISC",
+  "author": "",
   "type": "module",
+  "main": "eslint.config.js",
   "scripts": {
     "dev": "vite",
     "build": "vite build",
@@ -42,17 +54,5 @@
     "vite": "^7.1.2",
     "vite-plugin-eslint": "^1.8.1",
     "vitest": "^3.2.4"
-  },
-  "description": "This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.",
-  "main": "eslint.config.js",
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/saeedilat/cms-farsi.git"
-  },
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/saeedilat/cms-farsi/issues"
-  },
-  "homepage": "https://github.com/saeedilat/cms-farsi#readme"
+  }
 }
